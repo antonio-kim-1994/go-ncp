@@ -1,0 +1,59 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Naver Cloud 비용 모니터링 API",
+        "title": "Ncloud Cost monitoring API",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {},
+        "version": "1.0"
+    },
+    "host": "localhost:8080",
+    "basePath": "/ncp",
+    "paths": {
+        "/get-contract-summary-list": {
+            "get": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "contractSummary"
+                ],
+                "summary": "Get Ncloud contract summary list",
+                "operationId": "get-contract-summary-list",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Auth Key",
+                        "name": "auth-key",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Contract Month",
+                        "name": "contractMonth",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "Failed to call API",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

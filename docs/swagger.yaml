@@ -1,0 +1,40 @@
+basePath: /ncp
+host: localhost:8080
+info:
+  contact: {}
+  description: Naver Cloud 비용 모니터링 API
+  termsOfService: http://swagger.io/terms/
+  title: Ncloud Cost monitoring API
+  version: "1.0"
+paths:
+  /get-contract-summary-list:
+    get:
+      consumes:
+      - application/json
+      operationId: get-contract-summary-list
+      parameters:
+      - description: Auth Key
+        in: header
+        name: auth-key
+        required: true
+        type: string
+      - description: Contract Month
+        in: query
+        name: contractMonth
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ok
+          schema:
+            type: string
+        "400":
+          description: Failed to call API
+          schema:
+            type: string
+      summary: Get Ncloud contract summary list
+      tags:
+      - contractSummary
+swagger: "2.0"
